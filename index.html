@@ -11,6 +11,19 @@
             margin: 0;
             padding: 0;
         }
+        body {
+            background: #eee;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            color: #555;
+            letter-spacing: .65px;
+        }
+        h3 {
+            color: #3d405b;
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
         .resume {
             width: 870px;
             background: #fbfbfb;
@@ -18,12 +31,48 @@
             border: 1px solid #ddd;
             box-shadow: 0 0 20px -3px #ddd;
             position: relative;
-            display: flex;
+        }
+        .resume .base, .resume .func {
+            box-sizing: border-box;
+            /*float: left;*/
         }
         .resume .base {
             width: 225px;
             padding: 30px 15px;
             background: rgba(238, 238, 238, 0.6);
+        }
+        .resume .base .profile {
+            background: #8d9e78;
+            padding: 10px 15px 5px 15px;
+            margin: -30px -15px 45px -15px;
+            position: relative;
+            z-index: 2;
+        }
+        .resume .base .profile::after {
+            content: '';
+            background: #8d9e78;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            z-index: -1;
+            transform: skewY(-5deg);
+        }
+        .resume .base .profile .photo img {
+            width: 100%;
+            height: 100%;
+            transform: scale(.8);
+        }
+        .resume .base .profile .info {
+            color: #fcfcfc;
+            text-align: center;
+        }
+        .resume .base .profile .info .name {
+            margin-top: 7px;
+            margin-bottom: 0;
+            font-size: 1.8em;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -31,11 +80,18 @@
 <div class="resume">
     <div class="base">
         <div class="profile">
-            <div class="photo"></div>
-            <div class="info"></div>
+            <div class="photo"><img src="images/panda.jpg" alt="panda"></div>
+            <div class="info">
+                <h4 class="name">loveyunk</h4><span class="job">前端开发</span>
+            </div>
         </div>
-        <div class="about"></div>
-        <div class="concat"></div>
+        <div class="about">
+            <h3>Summary</h3>
+            <p>24 years old self-study Front end developer with 1 year experience. Have motivation, willingness to learn new things and technologies. Looking for a professional working environment with good benefits and have chances to develop career.</p>
+        </div>
+        <div class="contact">
+            <h3>Keep In Touch</h3>
+        </div>
         <div class="follow"></div>
     </div>
     <div class="func"></div>
