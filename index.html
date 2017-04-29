@@ -19,6 +19,8 @@
             color: #555;
             letter-spacing: .65px;
             cursor: default;
+            background: url("images/bg.jpg  ") fixed;
+            background-size: cover;
         }
         a {
             text-decoration: none;
@@ -33,11 +35,62 @@
             text-transform: uppercase;
             font-size: 18px;
         }
+        @media screen and (max-width: 600px) {
+            .resume {
+                width: 100%;
+            }
+            .base {
+                width: 100%;
+            }
+            .profile {
+                width: 100%;
+            }
+            .resume .base>div:nth-child(n+2) {
+                padding: 0 25px;
+            }
+            .resume .func {
+                width: 100%;
+            }
+            .resume .skills-soft ul li:nth-child(n+3) {
+                display: none;
+            }
+            .resume .project .card {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            .resume {
+                width: 870px;
+                margin: 20px auto;
+            }
+            .base {
+                width: 225px;
+                padding: 30px 15px 10030px 15px;
+                margin-bottom: -10000px;
+            }
+            .resume .base .profile {
+                width: 225px;
+                margin-left: -15px;
+            }
+            .resume .base .profile::after {
+                content: '';
+                width: 100%;
+                height: 35px;
+                background: #e8e8e8;
+                position: absolute;
+                transform: skewY(-7deg);
+            }
+            .resume .func {
+                width: 645px;
+            }
+            .resume .project .card {
+                width: 193px;
+            }
+        }
         /******** resume ********/
         .resume {
-            width: 870px;
             background: #fbfbfb;
-            margin: 20px auto;
             border: 1px solid #ddd;
             box-shadow: 0 0 20px -3px #bbb;
             position: relative;
@@ -58,44 +111,51 @@
             float: left;
         }
         .resume .base {
-            width: 225px;
-            padding: 30px 15px 10030px 15px;
             background: rgba(238, 238, 238, 0.6);
-            margin-bottom: -10000px;
+        }
+        .resume .base>div:nth-child(n+2) {
+            margin: 22px 0;
         }
         /******** profile ********/
         .resume .base .profile {
-            background: #8d9e78;
-            padding: 10px 15px 5px 15px;
-            margin: -30px -15px 45px -15px;
+            height: 370px;
+            position: relative;
+            z-index: 1;
+            margin-top: -30px;
+            margin-bottom: 50px;
+            background: #e8e8e8;
+        }
+        .resume .base .profile .banner {
+            width: 100%;
+            height: 200px;
+            background: url("images/banner.jpg");
+            background-size: cover;
+            border-bottom: 1px solid lightgrey;
+            margin-top: -154px;
             position: relative;
             z-index: 2;
         }
-        .resume .base .profile::after {
-            content: '';
-            background: #8d9e78;
-            width: 100%;
-            height: 30px;
-            position: absolute;
-            left: 0;
-            bottom: -15px;
-            z-index: -1;
-            transform: skewY(-5deg);
-        }
-        .resume .base .profile .photo img {
-            width: 100%;
-            height: 100%;
-            transform: scale(.8);
+        .resume .base .profile .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.3);
+            margin: 0 auto;
+            background: url("images/panda.jpg");
+            background-size: cover;
+            position: relative;
+            z-index: 3;
+            top: 125px;
         }
         .resume .base .profile .info {
-            color: #fcfcfc;
+            color: #000;
             text-align: center;
+            position: relative;
+            z-index: 4;
+            margin-top: 80px;
         }
-        .resume .base .profile .info .name {
-            margin-top: 7px;
-            margin-bottom: 0;
-            font-size: 1.8em;
-            font-weight: normal;
+        .resume .base .profile .info .name img {
+            width: 148px;
         }
         /******** contact ********/
         .resume .base .contact div {
@@ -162,7 +222,6 @@
         }
         /******** func ********/
         .resume .func {
-            width: 645px;
             padding: 30px 25px;
         }
         .resume .func:hover > div {
@@ -376,7 +435,6 @@
         }
         /******** project ********/
         .resume .project .card {
-            width: 193px;
             height: 120px;
             border: 1px solid #cdcdcd;
             display: inline-block;
@@ -389,9 +447,10 @@
     <div class="resume">
         <div class="base">
             <div class="profile">
-                <div class="photo"><img src="images/panda.jpg" alt="panda"></div>
+                <div class="photo"></div>
+                <div class="banner"></div>
                 <div class="info">
-                    <h4 class="name">loveyunk</h4><span class="job">Front-end Web Designer</span>
+                    <h4 class="name"><img src="images/loveyunk.png" alt=""></h4><span class="job">Front-end Web Designer</span>
                 </div>
             </div>
             <div class="about">
