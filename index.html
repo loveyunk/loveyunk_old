@@ -33,6 +33,7 @@
             text-transform: uppercase;
             font-size: 18px;
         }
+        /******** resume ********/
         .resume {
             width: 870px;
             background: #fbfbfb;
@@ -41,6 +42,7 @@
             box-shadow: 0 0 20px -3px #bbb;
             position: relative;
             overflow: hidden;
+            z-index: 10;
         }
         .resume::after {
             content: '';
@@ -57,8 +59,9 @@
         }
         .resume .base {
             width: 225px;
-            padding: 30px 15px;
+            padding: 30px 15px 10030px 15px;
             background: rgba(238, 238, 238, 0.6);
+            margin-bottom: -10000px;
         }
         /******** profile ********/
         .resume .base .profile {
@@ -283,15 +286,37 @@
         .resume .func .skills-prog ul li .skills-bar {
             background: #cdcdcd;
             height: 2px;
-            /*position: relative;*/
+            position: relative;
             width: calc( 100% - 120px );
             border-radius: 2px;
         }
+        .resume .func .skills-prog ul li .skills-bar .bar {
+            position: absolute;
+            top: -1px;
+            height: 4px;
+            background: #8d9e78;
+            box-shadow: 0 0 0 #8d9e78;
+            border-radius: 5px;
+        }
+        .resume .func .skills-prog ul li:hover .skills-bar .bar {
+            background: #e07a5f;
+            box-shadow: 0 0 0 1px #e07a5f;
+        }
         /******** skills-soft ********/
-        .resume .skills-soft ul {
+        .resume .func .skills-soft ul {
             display: flex;
             justify-content: space-between;
             text-align: center;
+        }
+        .resume .func .skills-soft ul li {
+            position: relative;
+        }
+        .resume .func .skills-soft ul li:hover svg .cbar {
+            stroke: #e07a5f;
+            stroke-width: 4px;
+        }
+        .resume .func .skills-soft ul li:hover span, .resume .func .skills-soft ul li:hover small {
+            transform: scale(1.2);
         }
         .resume .func .skills-soft ul li svg {
             width: 95%;
@@ -307,139 +332,258 @@
             stroke: #8d9e78;
             stroke-linecap: round;
         }
-        .resume .func .skills-soft ul li:hover svg .cbar {
-
+        .resume .func .skills-soft ul li span, .resume .func .skills-soft ul li small {
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 52%;
+            transition-duration: 0.3s;
+        }
+        .resume .func .skills-soft ul li span {
+            top: 40%;
+        }
+        /******** interests ********/
+        .resume .func .interests-items {
+            box-sizing: border-box;
+            padding: 15px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+            border: 1px solid #cdcdcd;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .resume .func .interests-items div i {
+            font-size: 45px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            color: #8d9e78;
+            transition-duration: .3s;
+        }
+        .resume .func .interests-items div {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+        }
+        .resume .func .interests-items div:hover i {
+            transform: scale(1.2);
+        }
+        .resume .func .interests-items div:hover span {
+            color: #e07a5f;
+            transition-duration: 0.3s;
+        }
+        /******** project ********/
+        .resume .project .card {
+            width: 193px;
+            height: 120px;
+            border: 1px solid #cdcdcd;
+            display: inline-block;
+            border-radius: 5px;
+            /*box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);*/
         }
     </style>
 </head>
 <body>
-<div class="resume">
-    <div class="base">
-        <div class="profile">
-            <div class="photo"><img src="images/panda.jpg" alt="panda"></div>
-            <div class="info">
-                <h4 class="name">loveyunk</h4><span class="job">Front-end Web Designer</span>
+    <div class="resume">
+        <div class="base">
+            <div class="profile">
+                <div class="photo"><img src="images/panda.jpg" alt="panda"></div>
+                <div class="info">
+                    <h4 class="name">loveyunk</h4><span class="job">Front-end Web Designer</span>
+                </div>
+            </div>
+            <div class="about">
+                <h3>About me</h3>
+                <p>你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，癡迷技術，希望能得到一份工作機會，請多指教。</p>
+            </div>
+            <div class="contact">
+                <h3>Keep In Touch</h3>
+                <div class="call"><i class="fa fa-phone"></i><span>(+86)152 3736 2691</span></div>
+                <div class="address"><i class="fa fa-map-marker"></i><span>Beijing, China</span></div>
+                <div class="email"><i class="fa fa-envelope" style="font-size: 16px"></i><span>mjjccc@126.com</span></div>
+                <div class="email"><i class="fa fa-qq" style="font-size: 15px"></i><span>139 846 3573</span></div>
+                <div class="email"><i class="fa fa-weixin" style="font-size: 15px"></i><span>mj152370</span></div>
+                <div class="website"><a href="http://www.loveyunk.com"><i class="fa fa-home"></i><span>www.loveyunk.com</span></a></div>
+            </div>
+            <div class="follow">
+                <h3>Follow</h3>
+                <div class="box">
+                    <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-weibo"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-weixin"></i></a>
+                    <a href="https://github.com/loveyunk" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa fa-codepen"></i></a>
+                </div>
             </div>
         </div>
-        <div class="about">
-            <h3>About me</h3>
-            <p>你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，癡迷技術，希望能得到一份工作機會，請多指教。</p>
-        </div>
-        <div class="contact">
-            <h3>Keep In Touch</h3>
-            <div class="call"><i class="fa fa-phone"></i><span>(+86)152 3736 2691</span></div>
-            <div class="address"><i class="fa fa-map-marker"></i><span>Beijing, China</span></div>
-            <div class="email"><i class="fa fa-envelope"></i><span>mjjccc@126.com</span></div>
-            <div class="website"><a href="http://www.loveyunk.com"><i class="fa fa-home"></i><span>www.loveyunk.com</span></a></div>
-        </div>
-        <div class="follow">
-            <h3>Follow</h3>
-            <div class="box">
-                <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="javascript:void(0);"><i class="fa fa-pinterest-p"></i></a>
-                <a href="" target="_blank"><i class="fa fa-github"></i></a>
-                <a href="" target="_blank"><i class="fa fa-codepen"></i></a>
+        <div class="func">
+            <div class="work">
+                <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
+                <ul>
+                    <li>
+                        <span>暫無</span>
+                        <small></small>
+                        <small></small>
+                    </li>
+                    <!--<li>-->
+                        <!--<span></span>-->
+                        <!--<small></small>-->
+                        <!--<small></small>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div class="edu">
+                <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+                <ul>
+                    <li>
+                        <span>河南科技學院</span>
+                        <small>計算機科學與技術</small>
+                        <small>Sep 2014 - now</small>
+                    </li>
+                    <!--<li>-->
+                        <!--<span>河南科技學院</span>-->
+                        <!--<small>計算機科學與技術</small>-->
+                        <!--<small>Sep 2014 - now</small>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div class="skills-prog">
+                <h3><i class="fa fa-code"></i>Skills</h3>
+                <ul>
+                    <li data-percent="75"><span>HTML / HTML5</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="71"><span>CSS / CSS3</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="70"><span>JavaScript</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="60"><span>jQuery</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="62"><span>VueJS</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="82"><span>Photoshop</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                    <li data-percent="30"><span>Java</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="skills-soft">
+                <h3><i class="fa fa-th-list"></i>Softwares skills</h3>
+                <ul>
+                    <li data-percent="70">
+                        <svg viewbox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="cbar"></circle>
+                        </svg><span>Photoshop</span><small></small>
+                    </li>
+                    <li data-percent="80">
+                        <svg viewbox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="cbar"></circle>
+                        </svg><span>Sublime Text</span><small></small>
+                    </li>
+                    <li data-percent="89">
+                        <svg viewbox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="cbar"></circle>
+                        </svg><span>XMind</span><small></small>
+                    </li>
+                    <li data-percent="75">
+                        <svg viewbox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="cbar"></circle>
+                        </svg><span>WebStorm</span><small></small>
+                    </li>
+                </ul>
+            </div>
+            <div class="interests">
+                <h3><i class="fa fa-star"></i>Interests</h3>
+                <div class="interests-items">
+                    <div class="latte"><i class="fa fa-coffee"></i><span>Latte</span></div>
+                    <div class="soccer"><i class="fa fa-futbol-o"></i><span>Soccer</span></div>
+                    <div class="movie"><i class="fa fa-film"></i><span>Movie</span></div>
+                    <div class="music"><i class="fa fa-headphones"></i><span>Music</span></div>
+                    <div class="game"><i class="fa fa-gamepad"></i><span>Game</span></div>
+                </div>
+            </div>
+            <div class="project">
+                <h3><i class="fa fa-paper-plane-o"></i>My Project</h3>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
             </div>
         </div>
     </div>
-    <div class="func">
-        <div class="work">
-            <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
-            <ul>
-                <li>
-                    <span>暫無</span>
-                    <small></small>
-                    <small></small>
-                </li>
-                <!--<li>-->
-                    <!--<span></span>-->
-                    <!--<small></small>-->
-                    <!--<small></small>-->
-                <!--</li>-->
-            </ul>
-        </div>
-        <div class="edu">
-            <h3><i class="fa fa-graduation-cap"></i>Education</h3>
-            <ul>
-                <li>
-                    <span>河南科技學院</span>
-                    <small>計算機科學與技術</small>
-                    <small>Sep 2014 - now</small>
-                </li>
-                <!--<li>-->
-                    <!--<span>河南科技學院</span>-->
-                    <!--<small>計算機科學與技術</small>-->
-                    <!--<small>Sep 2014 - now</small>-->
-                <!--</li>-->
-            </ul>
-        </div>
-        <div class="skills-prog">
-            <h3><i class="fa fa-code"></i>Skills</h3>
-            <ul>
-                <li data-percent="85"><span>HTML</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-                <li data-percent="80"><span>CSS3</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-                <li data-percent="70"><span>JavaScript</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-                <li data-percent="60"><span>jQuery</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-                <li data-percent="30"><span>VueJS</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-                <li data-percent="30"><span>Java</span>
-                    <div class="skills-bar">
-                        <div class="bar"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="skills-soft">
-            <h3><i class="fa fa-th-list"></i>Softwares skills</h3>
-            <ul>
-                <li data-percent="70">
-                    <svg viewbox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45"></circle>
-                        <circle cx="50" cy="50" r="45" class="cbar"></circle>
-                    </svg><span>Photoshop</span><small></small>
-                </li>
-                <li data-percent="80">
-                    <svg viewbox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45"></circle>
-                        <circle cx="50" cy="50" r="45" class="cbar"></circle>
-                    </svg><span>Sublime Text</span><small></small>
-                </li>
-                <li data-percent="89">
-                    <svg viewbox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45"></circle>
-                        <circle cx="50" cy="50" r="45" class="cbar"></circle>
-                    </svg><span>XMind</span><small></small>
-                </li>
-                <li data-percent="75">
-                    <svg viewbox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45"></circle>
-                        <circle cx="50" cy="50" r="45" class="cbar"></circle>
-                    </svg><span>WebStorm</span><small></small>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+
+        (function () {
+            $('.skills-prog li').find('.skills-bar').each(function(i) {
+                $(this).find('.bar').delay(i * 500).animate({
+                    width: $(this).parents().attr('data-percent') + '%'
+                }, 2000, 'linear', function() {
+                    return $(this).css({
+                        'transition-duration': '.5s'
+                    });
+                });
+            });
+
+            $('.skills-soft li').find('svg').each(function(i) {
+                let c, cbar, circle, percent, r;
+                circle = $(this).children('.cbar');
+                r = circle.attr('r');
+                c = Math.PI * (r * 2);
+                percent = $(this).parent().data('percent');
+                cbar = ((100 - percent) / 100) * c;
+                circle.css({
+                    'stroke-dashoffset': c,
+                    'stroke-dasharray': c
+                });
+                circle.delay(i * 150).animate({
+                    strokeDashoffset: cbar
+                }, 2000, 'linear', function() {
+                    return circle.css({
+                        'transition-duration': '.9s'
+                    });
+                });
+                $(this).siblings('small').prop('Counter', 0).delay(i * 150).animate({
+                    Counter: percent
+                }, {
+                    duration: 1000,
+                    step: function(now) {
+                        return $(this).text(Math.ceil(now) + '%');
+                    }
+                });
+            });
+        }).call(this);
+
+    </script>
 </body>
 </html>
