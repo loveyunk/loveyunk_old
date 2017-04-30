@@ -54,9 +54,6 @@
             .resume .skills-soft ul li:nth-child(n+3) {
                 display: none;
             }
-            .resume .project .card {
-                width: 100%;
-            }
         }
 
         @media screen and (min-width: 600px) {
@@ -83,9 +80,6 @@
             }
             .resume .func {
                 width: 645px;
-            }
-            .resume .project .card {
-                width: 193px;
             }
         }
         /******** resume ********/
@@ -434,12 +428,19 @@
             transition-duration: 0.3s;
         }
         /******** project ********/
-        .resume .project .card {
-            height: 120px;
+        .resume .func .project .items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .resume .func .project .items > li {
+            width: 32%;
+            height: 140px;
             border: 1px solid #cdcdcd;
-            display: inline-block;
             border-radius: 5px;
-            /*box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);*/
+            margin-bottom: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -469,12 +470,12 @@
             <div class="follow">
                 <h3>Follow</h3>
                 <div class="box">
-                    <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="" target="_blank"><i class="fa fa-weibo"></i></a>
-                    <a href="" target="_blank"><i class="fa fa-weixin"></i></a>
                     <a href="https://github.com/loveyunk" target="_blank"><i class="fa fa-github"></i></a>
                     <a href="http://codepen.io/loveyunk/" target="_blank"><i class="fa fa-codepen"></i></a>
+                    <a href="javascript:" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="javascript:" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="javascript:" target="_blank"><i class="fa fa-weibo"></i></a>
+                    <a href="javascript:" target="_blank"><i class="fa fa-weixin"></i></a>
                 </div>
             </div>
         </div>
@@ -522,6 +523,11 @@
                             <div class="bar"></div>
                         </div>
                     </li>
+                    <li data-percent="71"><span>SCSS</span>
+                        <div class="skills-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </li>
                     <li data-percent="70"><span>JavaScript</span>
                         <div class="skills-bar">
                             <div class="bar"></div>
@@ -543,11 +549,6 @@
                         </div>
                     </li>
                     <li data-percent="30"><span>SVG</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="30"><span>Git</span>
                         <div class="skills-bar">
                             <div class="bar"></div>
                         </div>
@@ -595,12 +596,14 @@
             </div>
             <div class="project">
                 <h3><i class="fa fa-paper-plane-o"></i>My Project</h3>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <ul class="items">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
     </div>
