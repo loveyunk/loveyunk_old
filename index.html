@@ -12,74 +12,100 @@
             margin: 0;
             padding: 0;
         }
+
+        html {
+            background: url("images/bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
         body {
-            background: #eee;
+            /*background: #eee;*/
             font-family: Helvetica, Arial, sans-serif;
             font-size: 15px;
             color: #555;
             letter-spacing: .65px;
             cursor: default;
-            background: url("images/bg.jpg  ") fixed;
-            background-size: cover;
         }
+
         a {
             text-decoration: none;
             color: #555;
         }
+
         ul {
             list-style: none;
         }
+
         img {
             max-width: 100%;
         }
+
         h3 {
             color: #3d405b;
             margin: 10px 0;
             text-transform: uppercase;
             font-size: 18px;
         }
+
         @media screen and (max-width: 600px) {
             .resume {
                 width: 100%;
             }
+
             .base {
                 width: 100%;
             }
+
             .profile {
                 width: 100%;
             }
-            .base>div:nth-child(n+2) {
+
+            .base > div:nth-child(n+2) {
                 padding: 0 25px;
             }
+
             .func {
                 width: 100%;
             }
+
             .work {
                 width: 100%;
             }
+
             .edu {
                 width: 100%;
             }
-            .func>div {
+
+            .func > div {
                 margin: 10px 0;
             }
+
             .interests-items {
                 justify-content: space-around;
                 flex-wrap: wrap;
                 margin: 1em 0;
             }
+
             .skills-soft ul {
                 flex-wrap: wrap;
             }
+
             .skills-soft ul li {
                 width: 50%;
-                /*line-height: 30px;*/
             }
-            .project>ul {
-                margin-top: 1em;
+
+            .project-items {
+                flex-wrap: wrap;
             }
-            .project-items li {
+
+            .project-items > a {
                 width: 100%;
+                margin-bottom: 20px;
+                height: 172px;
+            }
+
+            .project-items .shadow {
+                height: 124px;
             }
         }
 
@@ -88,15 +114,18 @@
                 width: 870px;
                 margin: 20px auto;
             }
+
             .base {
                 width: 225px;
                 padding: 30px 15px 10030px 15px;
                 margin-bottom: -10000px;
             }
+
             .profile {
                 width: 225px;
                 margin-left: -15px;
             }
+
             .profile::after {
                 content: '';
                 width: 100%;
@@ -105,35 +134,43 @@
                 position: absolute;
                 transform: skewY(-7deg);
             }
+
             .func {
                 width: 645px;
             }
+
             .func:hover > div:not(:hover) {
                 opacity: .5;
             }
-            .func>div {
+
+            .func > div {
                 margin: 10px 0;
             }
+
             .interests-items {
                 justify-content: space-between;
                 margin: 20px 0;
             }
+
             .work {
                 width: 44%;
             }
+
             .edu {
                 width: 56%;
             }
-            .project>ul {
-                margin-top: 20px;
+
+            .project-items > a {
+                width: 190px;
+                height: 145px;
             }
-            .project-items > li {
-                width: 32%;
+
+            .project-items .shadow {
+                height: 95px;
             }
-            .project-items li a {
-                height: 132px;
-            }
+
         }
+
         /******** resume ********/
         .resume {
             background: #fbfbfb;
@@ -143,6 +180,7 @@
             overflow: hidden;
             z-index: 10;
         }
+
         .resume::after {
             content: '';
             width: 100%;
@@ -152,16 +190,20 @@
             bottom: 0;
             left: 0;
         }
+
         .base, .func {
             box-sizing: border-box;
             float: left;
         }
+
         .base {
             background: rgba(238, 238, 238, 0.6);
         }
-        .base>div:nth-child(n+2) {
+
+        .base > div:nth-child(n+2) {
             margin: 22px 0;
         }
+
         /******** profile ********/
         .profile {
             height: 370px;
@@ -171,6 +213,7 @@
             margin-bottom: 50px;
             background: #e8e8e8;
         }
+
         .profile .banner {
             width: 100%;
             height: 200px;
@@ -181,6 +224,7 @@
             position: relative;
             z-index: 2;
         }
+
         .profile .photo {
             width: 150px;
             height: 150px;
@@ -196,6 +240,7 @@
             z-index: 3;
             top: 125px;
         }
+
         .profile .info {
             color: #000;
             text-align: center;
@@ -203,16 +248,20 @@
             z-index: 4;
             margin-top: 80px;
         }
+
         .profile .info .name img {
             width: 148px;
         }
+
         /******** contact ********/
         .contact div {
             line-height: 24px;
         }
+
         .contact div a:hover {
             color: #e07a5f;
         }
+
         .contact div i {
             width: 20px;
             height: 20px;
@@ -222,12 +271,15 @@
             margin-right: 15px;
             transition: all .3s ease;
         }
+
         .contact div:hover i {
             color: #e07a5f;
         }
+
         .contact .website span {
             position: relative;
         }
+
         .contact .website span::after {
             content: '';
             background: #e07a5f;
@@ -238,18 +290,22 @@
             left: 0;
             transition: all .3s ease;
         }
+
         .contact .website a:hover span::after {
             width: 100%;
         }
+
         /******** follow ********/
         .follow .box {
             text-align: center;
         }
+
         .follow .box a:hover i {
             background: #e07a5f;
             border-radius: 5px;
             transform: rotate(-45deg) scale(0.8);
         }
+
         .follow .box i {
             width: 60px;
             height: 60px;
@@ -262,30 +318,38 @@
             margin: 0 10px 10px 10px;
             transition: all .3s ease;
         }
+
         .follow .box i::before {
             transition-duration: 0.3s;
             display: block;
         }
+
         .follow .box a:hover i::before {
             transform: rotate(45deg) scale(1.5);
         }
+
         /******** func ********/
         .func {
             padding: 30px 25px;
         }
+
         .func:hover > div {
             transition-duration: .3s;
         }
+
         .func:hover > div:hover h3 i {
             transform: scale(1.2);
         }
+
         .func:hover > div:hover h3 {
             letter-spacing: 1.6px;
         }
+
         .func h3 {
             transition-duration: .3s;
             margin-top: 0;
         }
+
         .func h3 i {
             color: #fcfcfc;
             background: #8d9e78;
@@ -299,16 +363,20 @@
             margin-right: 8px;
             transition-duration: .3s;
         }
+
         .work, .edu {
             float: left;
         }
+
         .work small, .edu small {
             display: block;
             opacity: .7;
         }
+
         .work ul, .edu ul {
             margin: 15px 0;
         }
+
         .work ul li, .edu ul li {
             position: relative;
             margin-left: 15px;
@@ -316,12 +384,15 @@
             padding-bottom: 15px;
             line-height: 20px;
         }
+
         .work ul li:hover span, .edu ul li:hover span {
             color: #e07a5f;
         }
+
         .work ul li:hover::before, .edu ul li:hover::before {
             animation: circle 1.2s infinite;
         }
+
         @keyframes circle {
             from {
                 box-shadow: 0 0 0 0 #3d405b;
@@ -330,11 +401,13 @@
                 box-shadow: 0 0 0 6px rgba(61, 64, 91, 0);
             }
         }
+
         .work ul li::before, .work ul li::after, .edu ul li::before, .edu ul li::after {
             content: '';
             display: block;
             position: absolute;
         }
+
         .work ul li::before, .edu ul li::before {
             width: 7px;
             height: 7px;
@@ -344,11 +417,13 @@
             left: 0;
             z-index: 1;
         }
+
         .work ul li:first-of-type::before, .edu ul li:first-of-type::before {
             width: 10px;
             height: 10px;
             left: -2px;
         }
+
         .work ul li::after, .edu ul li::after {
             width: 3px;
             height: 100%;
@@ -356,39 +431,48 @@
             top: 0;
             left: 5px;
         }
+
         .work ul li:last-of-type::after, .edu ul li:last-of-type::after {
             border-radius: 1.5px;
         }
+
         .work ul li span, .edu ul li span {
             transition-duration: .3s;
         }
+
         /******** skills-prog ********/
         .skills-prog {
             clear: both;
         }
+
         .skills-prog ul {
             margin: 16px 0 15px 16px;
         }
+
         .skills-prog ul li {
             margin-bottom: 8px;
             display: flex;
             align-items: center;
             transition-duration: .3s;
         }
+
         .skills-prog ul li:hover {
             color: #e07a5f;
         }
+
         .skills-prog ul li span {
             display: block;
             width: 120px;
         }
+
         .skills-prog ul li .skills-bar {
             background: #cdcdcd;
             height: 2px;
             position: relative;
-            width: calc( 100% - 120px );
+            width: calc(100% - 120px);
             border-radius: 2px;
         }
+
         .skills-prog ul li .skills-bar .bar {
             position: absolute;
             top: -1px;
@@ -397,41 +481,50 @@
             box-shadow: 0 0 0 #8d9e78;
             border-radius: 5px;
         }
+
         .skills-prog ul li:hover .skills-bar .bar {
             background: #e07a5f;
             box-shadow: 0 0 0 1px #e07a5f;
         }
+
         /******** skills-soft ********/
         .skills-soft ul {
             display: flex;
             justify-content: space-between;
             /*flex-wrap: wrap;*/
         }
+
         .skills-soft ul li {
             position: relative;
             /*width: 25%;*/
         }
+
         .skills-soft ul li:hover svg .cbar {
             stroke: #e07a5f;
             stroke-width: 4px;
         }
+
         .skills-soft ul li:hover span, .skills-soft ul li:hover small {
             transform: scale(1.2);
         }
+
         .skills-soft ul li svg {
             width: 95%;
             fill: transparent;
             transform: rotate(-90deg);
         }
+
         .skills-soft ul li svg circle {
             stroke-width: 1px;
             stroke: #cdcdcd;
         }
+
         .skills-soft ul li svg .cbar {
             stroke-width: 3px;
             stroke: #8d9e78;
             stroke-linecap: round;
         }
+
         .skills-soft ul li span, .skills-soft ul li small {
             position: absolute;
             display: block;
@@ -440,9 +533,11 @@
             text-align: center;
             transition-duration: 0.3s;
         }
+
         .skills-soft ul li span {
             top: 40%;
         }
+
         /******** interests ********/
         .interests-items {
             box-sizing: border-box;
@@ -452,6 +547,7 @@
             text-align: center;
             display: flex;
         }
+
         .interests-items div i {
             font-size: 45px;
             width: 60px;
@@ -460,287 +556,279 @@
             color: #8d9e78;
             transition-duration: .3s;
         }
+
         .interests-items div {
             /*display: inline-block;*/
             width: 80px;
             height: 80px;
             cursor: pointer;
         }
+
         .interests-items div:hover i {
             transform: scale(1.2);
         }
+
         .interests-items div:hover span {
             color: #e07a5f;
             transition-duration: 0.3s;
         }
+
         /******** project ********/
         .project-items {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            /*margin-top: 25px;*/
+            margin-top: 22px;
         }
-        .project-items > li {
-            /*width: 100%;*/
-            border: 1px solid #cdcdcd;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            transition: all .3s ease;
-        }
-        .project-items li a {
+
+        .project-items > a {
             display: block;
-            box-sizing: border-box;
-            width: 100%;
-            /*height: 132px;*/
-            border: 10px solid #fbfbfb;
-            border-radius: 5px;
+            /*width: 190px;*/
+            /*height: 145px;*/
+            text-align: center;
+            background: #fff;
+            border-radius: 6px 6px 0 0;
+            box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
         }
-        .project-items li a>img {
+
+        .project-items .shadow {
+            width: 100%;
+            /*height: 95px;*/
+            overflow: hidden;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .project-items > a img {
             width: 100%;
             height: 100%;
+            border-radius: 6px 6px 0 0;
+            transition: all linear .3s;
         }
-        .project-items li:hover {
-            opacity: .8;
+
+        .project-items > a:hover img {
+            transform: scale(1.2);
         }
-        .project-items-caption {
-            text-align: center;
-            font-size: 1em;
-        }
-        .project-items-caption h4 {
-            font-weight: bold;
-            color: #666;
-            margin-bottom: 10px;
+
+        .project-item-title {
+            color: #5e5e5e;
+            display: inline-block;
+            font-size: 13px;
+            margin-top: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="resume">
-        <div class="base">
-            <div class="profile">
-                <div class="photo"></div>
-                <div class="banner"></div>
-                <div class="info">
-                    <h4 class="name"><img src="images/loveyunk.png" alt=""></h4><span class="job">Front-end Web Designer</span>
-                </div>
-            </div>
-            <div class="about">
-                <h3>About me</h3>
-                <p>你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，喜歡編程，希望能得到一份工作機會，請多指教。</p>
-            </div>
-            <div class="contact">
-                <h3>Keep In Touch</h3>
-                <div class="call"><i class="fa fa-phone"></i><span>(+86)152 3736 2691</span></div>
-                <div class="address"><i class="fa fa-map-marker"></i><span>Henan, China</span></div>
-                <div class="email"><i class="fa fa-envelope" style="font-size: 16px"></i><span>mjjccc@126.com</span></div>
-                <div class="email"><i class="fa fa-qq" style="font-size: 15px"></i><span>139 846 3573</span></div>
-                <div class="email"><i class="fa fa-weixin" style="font-size: 15px"></i><span>mj152370</span></div>
-                <!--<div class="website"><a href="http://www.cnblogs.com/loveyunk/" target="_blank"><i class="fa fa-book" style="font-size: 18px;"></i><span>bolg</span></a></div>-->
-                <div class="website"><a href="http://www.loveyunk.com"><i class="fa fa-home"></i><span>www.loveyunk.com</span></a></div>
-            </div>
-            <div class="follow">
-                <h3>Follow</h3>
-                <div class="box">
-                    <a href="https://github.com/loveyunk" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href="http://codepen.io/loveyunk/" target="_blank"><i class="fa fa-codepen"></i></a>
-                    <a href="javascript:" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="javascript:" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="javascript:" target="_blank"><i class="fa fa-weibo"></i></a>
-                    <a href="javascript:" target="_blank"><i class="fa fa-weixin"></i></a>
-                </div>
+<div class="resume">
+    <div class="base">
+        <div class="profile">
+            <div class="photo"></div>
+            <div class="banner"></div>
+            <div class="info">
+                <h4 class="name"><img src="images/loveyunk.png" alt=""></h4><span
+                    class="job">Front-end Web Designer</span>
             </div>
         </div>
-        <div class="func">
-            <div class="work">
-                <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
-                <ul>
-                    <li>
-                        <span>暫無</span>
-                        <small></small>
-                        <small></small>
-                    </li>
-                    <!--<li>-->
-                        <!--<span></span>-->
-                        <!--<small></small>-->
-                        <!--<small></small>-->
-                    <!--</li>-->
-                </ul>
-            </div>
-            <div class="edu">
-                <h3><i class="fa fa-graduation-cap"></i>Education</h3>
-                <ul>
-                    <li>
-                        <span>河南科技學院</span>
-                        <small>計算機科學與技術</small>
-                        <small>Sep 2014 - now</small>
-                    </li>
-                    <!--<li>-->
-                        <!--<span>河南科技學院</span>-->
-                        <!--<small>計算機科學與技術</small>-->
-                        <!--<small>Sep 2014 - now</small>-->
-                    <!--</li>-->
-                </ul>
-            </div>
-            <div class="skills-prog">
-                <h3><i class="fa fa-code"></i>Skills</h3>
-                <ul>
-                    <li data-percent="75"><span>HTML / HTML5</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="71"><span>CSS / CSS3</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="71"><span>SCSS</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="70"><span>JavaScript</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="60"><span>jQuery</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="62"><span>VueJS</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="82"><span>Photoshop</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                    <li data-percent="30"><span>SVG</span>
-                        <div class="skills-bar">
-                            <div class="bar"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="skills-soft">
-                <h3><i class="fa fa-th-list"></i>Softwares skills</h3>
-                <ul>
-                    <li data-percent="70">
-                        <svg viewbox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" />
-                            <circle cx="50" cy="50" r="45" class="cbar" />
-                        </svg><span>Photoshop</span><small></small>
-                    </li>
-                    <li data-percent="80">
-                        <svg viewbox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" />
-                            <circle cx="50" cy="50" r="45" class="cbar" />
-                        </svg><span>Sublime Text</span><small></small>
-                    </li>
-                    <li data-percent="89">
-                        <svg viewbox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" />
-                            <circle cx="50" cy="50" r="45" class="cbar" />
-                        </svg><span>XMind</span><small></small>
-                    </li>
-                    <li data-percent="75">
-                        <svg viewbox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" />
-                            <circle cx="50" cy="50" r="45" class="cbar" />
-                        </svg><span>WebStorm</span><small></small>
-                    </li>
-                </ul>
-            </div>
-            <div class="interests">
-                <h3><i class="fa fa-star"></i>Interests</h3>
-                <div class="interests-items">
-                    <div class="latte"><i class="fa fa-coffee"></i><span>Latte</span></div>
-                    <div class="soccer"><i class="fa fa-book"></i><span>Book</span></div>
-                    <div class="movie"><i class="fa fa-film"></i><span>Movie</span></div>
-                    <div class="music"><i class="fa fa-headphones"></i><span>Music</span></div>
-                    <div class="game"><i class="fa fa-gamepad"></i><span>Game</span></div>
-                </div>
-            </div>
-            <div class="project">
-                <h3><i class="fa fa-paper-plane-o"></i>My Project</h3>
-                <ul class="project-items">
-                    <li>
-                        <a href="" target="_blank">
-                            <img src="images/prj01.jpg" alt="">
-                        </a>
-                        <div class="project-items-caption">
-                            <h4>loveyunk</h4>
-                            <!--<p>web developer</p>-->
-                        </div>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">
-                            <img src="images/prj02.jpg" alt="">
-                        </a>
-                        <div class="project-items-caption">
-                            <h4>loveyunk</h4>
-                            <!--<p>web developer</p>-->
-                        </div>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">
-                            <img src="images/prj03.jpg" alt="">
-                        </a>
-                        <div class="project-items-caption">
-                            <h4>loveyunk</h4>
-                            <!--<p>web developer</p>-->
-                        </div>
-                    </li>
-                    <!--<li>-->
-                        <!--<a href="" target="_blank">-->
-                            <!--<img src="images/prj01.jpg" alt="">-->
-                        <!--</a>-->
-                        <!--<div class="project-items-caption">-->
-                            <!--<h4>tmall</h4>-->
-                            <!--&lt;!&ndash;<p>web developer</p>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="" target="_blank">-->
-                            <!--<img src="images/prj01.jpg" alt="">-->
-                        <!--</a>-->
-                        <!--<div class="project-items-caption">-->
-                            <!--<h4>tmall</h4>-->
-                            <!--&lt;!&ndash;<p>web developer</p>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="" target="_blank">-->
-                            <!--<img src="images/prj01.jpg" alt="">-->
-                        <!--</a>-->
-                        <!--<div class="project-items-caption">-->
-                            <!--<h4>tmall</h4>-->
-                            <!--&lt;!&ndash;<p>web developer</p>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</li>-->
-                </ul>
+        <div class="about">
+            <h3>About me</h3>
+            <p>你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，喜歡編程，希望能得到一份工作機會，請多指教。</p>
+        </div>
+        <div class="contact">
+            <h3>Keep In Touch</h3>
+            <div class="call"><i class="fa fa-phone"></i><span>(+86)152 3736 2691</span></div>
+            <div class="address"><i class="fa fa-map-marker"></i><span>Henan, China</span></div>
+            <div class="email"><i class="fa fa-envelope" style="font-size: 16px"></i><span>mjjccc@126.com</span></div>
+            <div class="email"><i class="fa fa-qq" style="font-size: 15px"></i><span>139 846 3573</span></div>
+            <div class="email"><i class="fa fa-weixin" style="font-size: 15px"></i><span>mj152370</span></div>
+            <!--<div class="website"><a href="http://www.cnblogs.com/loveyunk/" target="_blank"><i class="fa fa-book" style="font-size: 18px;"></i><span>bolg</span></a></div>-->
+            <div class="website"><a href="http://www.loveyunk.com"><i
+                    class="fa fa-home"></i><span>www.loveyunk.com</span></a></div>
+        </div>
+        <div class="follow">
+            <h3>Follow</h3>
+            <div class="box">
+                <a href="https://github.com/loveyunk" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="https://jsfiddle.net/user/loveyunk/fiddles/" target="_blank"><i class="fa fa-jsfiddle"></i></a>
+                <a href="http://codepen.io/loveyunk/" target="_blank"><i class="fa fa-codepen"></i></a>
+                <a href="javascript:" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="javascript:" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="javascript:" target="_blank"><i class="fa fa-weibo"></i></a>
+                <!--<a href="javascript:" target="_blank"><i class="fa fa-weixin"></i></a>-->
             </div>
         </div>
+    </div>
+    <div class="func">
+        <div class="work">
+            <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
+            <ul>
+                <li>
+                    <span>暫無</span>
+                    <small></small>
+                    <small></small>
+                </li>
+                <!--<li>-->
+                <!--<span></span>-->
+                <!--<small></small>-->
+                <!--<small></small>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="edu">
+            <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+            <ul>
+                <li>
+                    <span>河南科技學院</span>
+                    <small>計算機科學與技術</small>
+                    <small>Sep 2014 - now</small>
+                </li>
+                <!--<li>-->
+                <!--<span>河南科技學院</span>-->
+                <!--<small>計算機科學與技術</small>-->
+                <!--<small>Sep 2014 - now</small>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div class="skills-prog">
+            <h3><i class="fa fa-code"></i>Skills</h3>
+            <ul>
+                <li data-percent="75"><span>HTML / HTML5</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="71"><span>CSS / CSS3</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="71"><span>SCSS</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="70"><span>JavaScript</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="60"><span>jQuery</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="62"><span>VueJS</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <!--<li data-percent="62"><span>NodeJS</span>-->
+                <!--<div class="skills-bar">-->
+                <!--<div class="bar"></div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li data-percent="62"><span>GSAP</span>-->
+                <!--<div class="skills-bar">-->
+                <!--<div class="bar"></div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <li data-percent="82"><span>Photoshop</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="60"><span>SVG</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="skills-soft">
+            <h3><i class="fa fa-th-list"></i>Softwares skills</h3>
+            <ul>
+                <li data-percent="70">
+                    <svg viewbox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45"/>
+                        <circle cx="50" cy="50" r="45" class="cbar"/>
+                    </svg>
+                    <span>Photoshop</span>
+                    <small></small>
+                </li>
+                <li data-percent="80">
+                    <svg viewbox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45"/>
+                        <circle cx="50" cy="50" r="45" class="cbar"/>
+                    </svg>
+                    <span>Sublime Text</span>
+                    <small></small>
+                </li>
+                <li data-percent="89">
+                    <svg viewbox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45"/>
+                        <circle cx="50" cy="50" r="45" class="cbar"/>
+                    </svg>
+                    <span>XMind</span>
+                    <small></small>
+                </li>
+                <li data-percent="75">
+                    <svg viewbox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45"/>
+                        <circle cx="50" cy="50" r="45" class="cbar"/>
+                    </svg>
+                    <span>WebStorm</span>
+                    <small></small>
+                </li>
+            </ul>
+        </div>
+        <div class="interests">
+            <h3><i class="fa fa-star"></i>Interests</h3>
+            <div class="interests-items">
+                <div class="latte"><i class="fa fa-coffee"></i><span>Latte</span></div>
+                <div class="soccer"><i class="fa fa-book"></i><span>Book</span></div>
+                <div class="movie"><i class="fa fa-film"></i><span>Movie</span></div>
+                <div class="music"><i class="fa fa-headphones"></i><span>Music</span></div>
+                <div class="game"><i class="fa fa-gamepad"></i><span>Game</span></div>
+            </div>
+        </div>
+        <div class="project">
+            <h3><i class="fa fa-paper-plane-o"></i>My Project</h3>
+            <div class="project-items">
+                <a href="http://www.loveyunk.com/tmall" target="_blank">
+                    <div class="shadow">
+                        <img src="images/prj01.jpg" alt="">
+                    </div>
+                    <span class="project-item-title">仿天猫商城首页</span>
+                </a>
+                <a href="">
+                    <div class="shadow">
+                        <img src="images/prj02.jpg" alt="">
+                    </div>
+                    <span class="project-item-title">vue仿饿了吗</span>
+                </a>
+                <a href="http://www.loveyunk.com/puzzle/" target="_blank">
+                    <div class="shadow">
+                        <img src="images/prj03.jpg" alt="">
+                    </div>
+                    <span class="project-item-title">拼图小游戏</span>
+                </a>
+            </div>
+        </div>
+        <!--</div>-->
     </div>
 
     <script src="js/jquery.js"></script>
     <script>
 
         (function () {
-            $('.skills-prog li').find('.skills-bar').each(function(i) {
+            $('.skills-prog li').find('.skills-bar').each(function (i) {
                 $(this).find('.bar').delay(i * 500).animate({
                     width: $(this).parents().attr('data-percent') + '%'
-                }, 2000, 'linear', function() {
+                }, 2000, 'linear', function () {
                     return $(this).css({
                         'transition-duration': '.5s'
                     });
                 });
             });
 
-            $('.skills-soft li').find('svg').each(function(i) {
+            $('.skills-soft li').find('svg').each(function (i) {
                 let c, cbar, circle, percent, r;
                 circle = $(this).children('.cbar');
                 r = circle.attr('r');
@@ -753,7 +841,7 @@
                 });
                 circle.delay(i * 150).animate({
                     strokeDashoffset: cbar
-                }, 2000, 'linear', function() {
+                }, 2000, 'linear', function () {
                     return circle.css({
                         'transition-duration': '.9s'
                     });
@@ -762,7 +850,7 @@
                     Counter: percent
                 }, {
                     duration: 1000,
-                    step: function(now) {
+                    step: function (now) {
                         return $(this).text(Math.ceil(now) + '%');
                     }
                 });
