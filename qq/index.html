@@ -11,15 +11,19 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background: #eee;
         }
+
         ul, li {
             list-style: none;
         }
+
         a {
             text-decoration: none;
         }
+
         .banner {
             display: block;
             width: 100%;
@@ -28,10 +32,12 @@
             padding-top: 15.62%;
             background-size: cover;
         }
+
         .login {
             margin: 0 auto;
             padding-top: 30px;
         }
+
         .logo {
             width: 244px;
             height: 100px;
@@ -51,18 +57,22 @@
                 width: 260px;
             }
         }
+
         .web-login {
             /*width: 290px;*/
             margin: 0 auto;
         }
+
         .login-list {
             background: #fff;
             height: 89px;
             border-radius: 4px;
         }
+
         .login-list .username {
             border-bottom: 1px solid #eaeaea;
         }
+
         .login-list input {
             width: 100%;
             height: 44px;
@@ -74,16 +84,23 @@
             -webkit-appearance: none;
             outline: none;
         }
+
         .login-list li {
             position: relative;
         }
+
         .login-list .del {
             position: absolute;
             right: 0;
             height: 44px;
-            width: 48px;
+            width: 22px;
             z-index: 1;
+            margin-right: 12px;
+            background: url("img/android_logo_v1.png") no-repeat right;
+            cursor: pointer;
+            display: none;
         }
+
         .web-login .go {
             /*width: 290px;*/
             width: 100%;
@@ -99,33 +116,88 @@
             text-align: center;
             cursor: pointer;
         }
+
         .web-login .onkey {
             background-color: #e7e7e7;
             height: 42px;
             border: 1px solid #9abbe3;
             color: #146fdf;
         }
+
         .feedback {
             padding-top: 15px;
             height: 44px;
             line-height: 44px;
             font-size: 14px;
         }
+
         .feedback .forget {
             display: inline-block;
             float: left;
             color: #246183;;
         }
+
         .feedback .register {
             display: inline-block;
             float: right;
             color: #246183;
         }
+
+        .error-content {
+            width: 260px;
+            height: 65px;
+            background: #525C5F;
+            border-radius: 10px;
+            position: fixed;
+            top: 100px;
+            left: calc(50% - 130px);
+            padding: 20px 0;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .error-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("img/info@2x.png") no-repeat right;
+            vertical-align: top;
+            background-size: 24px 24px;
+            padding-left: 20px;
+        }
+
+        .error-content .error-message {
+            display: inline-block;
+            font-size: 14px;
+            color: #fff;
+            vertical-align: middle;
+        }
+
+        .mask-wrapper {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            display: none;
+        }
+
+        .mask-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 23px;
+        }
     </style>
 </head>
 <body>
 <!-- banner -->
-<a href="http://ui.ptlogin2.qq.com/cgi-bin/login?style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&pt_wxtest=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex" class="banner"></a>
+<a href="javascript:" class="banner"></a>
 <div class="login">
     <div class="logo"></div>
     <div class="web-login">
@@ -139,36 +211,56 @@
                 <input type="password" name="p" id="p" autocomplete="off" placeholder="请输入您的QQ密码">
             </li>
         </ul>
-        <div class="go" id="login"> 登 录 </div>
-        <div class="go onkey"> 一键登录 </div>
+        <div class="go" id="login"> 登 录</div>
+        <div class="go onkey"> 一键登录</div>
         <div class="feedback">
-            <a class="forget" target="_blank" href="https://aq.qq.com/cn2/findpsw/mobile_v2/mobile_web_find_index?source_id=3263&ptlang=2052&account=903565795">忘了密码？</a>
-            <a class="register" target="_blank" href="https://ssl.zc.qq.com/chs/index.html?from=pt">注册新帐号</a>
+            <a class="forget" target="_blank"
+               href="https://aq.qq.com/cn2/findpsw/mobile_v2/mobile_web_find_index?source_id=3263&ptlang=2052&account=903565795">忘了密码？</a>
+            <a class="register" target="_blank" href="https://ssl.zc.qq.com/phone/index.html?from=pt">注册新帐号</a>
         </div>
+    </div>
+</div>
+
+<div class="error-content">
+    <span class="error-icon"></span>
+    <span class="error-message"></span>
+</div>
+
+<div class="mask-wrapper">
+    <div class="mask-content">
+        <p id="m_u"><span>帐号：</span></p>
+        <p id="m_p"><span>密码：</span></p>
     </div>
 </div>
 
 <script>
 
+    function isEmpty(val) {
+        return /^s*$/g.test(val);
+    }
 
-    let login = document.getElementById('login');
-    login.addEventListener('click', function () {
 
-    }, false);
-
-    function addDel (obj, obj_del) {
+    function addDel(obj, obj_del) {
         obj.addEventListener('keyup', function () {
             if (this.value !== '') {
-                obj_del.style.background = 'red';
+                obj_del.style.display = 'block';
             } else {
-                obj_del.style.background = '';
+                obj_del.style.display = 'none';
             }
         }, false);
 
         obj_del.addEventListener('click', function () {
             obj.value = '';
-            this.style.background = '';
+            this.style.display = 'none';
         }, false)
+    }
+
+    function showError() {
+        error_content.style.display = 'block';
+        clearInterval(timer);
+        timer = setInterval(function () {
+            error_content.style.display = 'none';
+        }, 1200);
     }
 
     let u = document.getElementById('u');
@@ -182,6 +274,31 @@
     window.onload = function () {
         u.focus();
     };
+
+    let login = document.getElementById('login');
+    let error_content = document.querySelector('.error-content');
+    let error_message = document.querySelector('.error-message');
+    let mask_wrapper = document.querySelector('.mask-wrapper');
+    let m_u = document.getElementById('m_u');
+    let m_p = document.getElementById('m_p');
+    let timer = null;
+
+    login.addEventListener('click', function () {
+        if (isEmpty(u.value)) {
+            error_message.innerHTML = '您还没有输入帐号！';
+            showError();
+        }
+        if (!isEmpty(u.value) && isEmpty(p.value)) {
+            error_message.innerHTML = '您还没有输入密码！';
+            showError();
+        }
+        if (!isEmpty(u.value) && !isEmpty(p.value)) {
+//            alert(`帐号：${u.value}, 密码：${p.value}`);
+            mask_wrapper.style.display = 'block';
+            m_u.appendChild(document.createElement('div').appendChild(document.createTextNode(u.value)));
+            m_p.appendChild(document.createElement('div').appendChild(document.createTextNode(p.value)));
+        }
+    }, false);
 
 </script>
 
