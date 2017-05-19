@@ -17,6 +17,9 @@
         ul, li {
             list-style: none;
         }
+        a {
+            text-decoration: none;
+        }
         .banner {
             display: block;
             width: 100%;
@@ -27,7 +30,7 @@
         }
         .login {
             margin: 0 auto;
-            padding: 30px 27.5px 0 27.5px;
+            padding-top: 30px;
         }
         .logo {
             width: 244px;
@@ -38,7 +41,7 @@
         }
         .web-login {
             width: 290px;
-            padding: 0 15px;
+            /*padding: 0 15px;*/
             margin: 0 auto;
         }
         .login-list {
@@ -50,7 +53,8 @@
             border-bottom: 1px solid #eaeaea;
         }
         .login-list input {
-            width: 273px;
+            /*width: 273px;*/
+            width: 100%;
             height: 44px;
             color: #000;
             border: none;
@@ -69,10 +73,10 @@
             height: 44px;
             width: 48px;
             z-index: 1;
-            /*background: red;*/
         }
         .web-login .go {
-            width: 290px;
+            /*width: 290px;*/
+            width: 100%;
             height: 44px;
             line-height: 44px;
             background: #146fdf;
@@ -83,6 +87,7 @@
             margin-top: 15px;
             display: block;
             text-align: center;
+            cursor: pointer;
         }
         .web-login .onkey {
             background-color: #e7e7e7;
@@ -110,7 +115,7 @@
 </head>
 <body>
 <!-- banner -->
-<a href="javascript:" class="banner"></a>
+<a href="http://ui.ptlogin2.qq.com/cgi-bin/login?style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&pt_wxtest=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex" class="banner"></a>
 <div class="login">
     <div class="logo"></div>
     <div class="web-login">
@@ -127,23 +132,19 @@
         <div class="go" id="login"> 登 录 </div>
         <div class="go onkey"> 一键登录 </div>
         <div class="feedback">
-            <span class="forget">忘了密码？</span>
-            <span class="register">注册新帐号</span>
+            <a class="forget" target="_blank" href="https://aq.qq.com/cn2/findpsw/mobile_v2/mobile_web_find_index?source_id=3263&ptlang=2052&account=903565795">忘了密码？</a>
+            <a class="register" target="_blank" href="https://ssl.zc.qq.com/chs/index.html?from=pt">注册新帐号</a>
         </div>
     </div>
 </div>
 
 <script>
 
-    var login = document.getElementById('login');
+
+    let login = document.getElementById('login');
     login.addEventListener('click', function () {
 
     }, false);
-
-    var u = document.getElementById('u');
-    var p = document.getElementById('p');
-    var u_del = document.getElementById('u-del');
-    var p_del = document.getElementById('p-del');
 
     function addDel (obj, obj_del) {
         obj.addEventListener('keyup', function () {
@@ -160,8 +161,17 @@
         }, false)
     }
 
+    let u = document.getElementById('u');
+    let p = document.getElementById('p');
+    let u_del = document.getElementById('u-del');
+    let p_del = document.getElementById('p-del');
+
     addDel(u, u_del);
     addDel(p, p_del);
+
+    window.onload = function () {
+        u.focus();
+    };
 
 </script>
 
