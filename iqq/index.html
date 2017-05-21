@@ -182,12 +182,13 @@
             height: 100%;
             /*background: rgba(0, 0, 0, .8);*/
             background: #fff;
+            overflow: hidden;
             display: none;
         }
 
         .mask-content {
             position: absolute;
-            top: 60%;
+            top: 360px;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 10px 20px;
@@ -195,13 +196,16 @@
             font-size: 1em;
             font-weight: 700;
         }
+
         .mask-wrapper .mask-bg {
             width: 100%;
             height: 300px;
             background: url("./img/t.jpg") no-repeat;
             background-size: cover;
         }
+
         .mask-content > p {
+            font-size: 12px;
             padding: 10px 0;
         }
     </style>
@@ -300,12 +304,20 @@
         if (isEmpty(u.value)) {
             error_message.innerHTML = '您还没有输入帐号！';
             showError();
-        }
-        if (!isEmpty(u.value) && isEmpty(p.value)) {
+            return false;
+        } else if (isEmpty(p.value)) {
             error_message.innerHTML = '您还没有输入密码！';
             showError();
-        }
-        if (!isEmpty(u.value) && !isEmpty(p.value)) {
+            return false;
+        } else if (u.value.length > 15) {
+            error_message.innerHTML = '请输入正确的帐号！';
+            showError();
+            return false;
+        } else if (p.value.length > 15) {
+            error_message.innerHTML = '请输入正确的密码！';
+            showError();
+            return false;
+        } else {
 //            alert(`帐号：${u.value}, 密码：${p.value}`);
             mask_wrapper.style.display = 'block';
             m_u.appendChild(document.createElement('div').appendChild(document.createTextNode(u.value)));
