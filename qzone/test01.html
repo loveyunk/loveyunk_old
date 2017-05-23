@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ空间-分享生活，留住感动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background: url('./img/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 12px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 880px;
+            height: 100%;
+            margin: auto;
+        }
+
+        .container > .logo {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 251px;
+            height: 98px;
+            background: url("./img/logo.png") no-repeat 0 0;
+        }
+
+        .login-wrapper {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            width: 418px;
+            height: 316px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, .5);
+            background: #fff;
+        }
+
+        .login-content {
+            width: 272px;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .login-wrapper .title {
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            margin: 10px 0 18px 0;
+        }
+
+        .login-wrapper .recommend {
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+        }
+
+        .login-wrapper .recommend .quick {
+            color: #3481cf;
+            text-decoration: none;
+        }
+
+        .login-wrapper .recommend .quick:hover {
+            text-decoration: underline;
+        }
+
+        .login-wrapper .username-wrapper, .login-wrapper .password-wrapper {
+            margin: 20px 0;
+        }
+
+        .login-wrapper .username, .login-wrapper .password {
+            box-sizing: border-box;
+            width: 100%;
+            height: 42px;
+            padding: 8px 0 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .login-wrapper .username:focus, .login-wrapper .password:focus {
+            border-color: #A5D6FF;
+        }
+
+        .login-wrapper .loginBtn {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            font-family: "Microsoft Yahei", sans-serif;
+            letter-spacing: 5px;
+            background: #84CE29;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .login-wrapper .login-bottom {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+        }
+
+        .login-wrapper .login-bottom li {
+            float: left;
+        }
+
+        .login-wrapper .login-bottom li a {
+            display: inline-block;
+            padding: 0 6px;
+            border-right: 1px solid #bfbfbf;
+            line-height: 12px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .login-wrapper .login-bottom li:last-child a {
+            border: none;
+        }
+
+        .login-wrapper .login-bottom li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 5%;
+            width: 100%;
+            color: #fff;
+            line-height: 21px;
+            text-align: center;
+        }
+
+        .footer .footer-links li {
+            display: inline-block;
+        }
+
+        .footer .footer-links li a {
+            font-size: 12px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo"></div>
+    <div class="login-wrapper">
+        <div class="login-content">
+            <div class="title">帐号密码登录</div>
+            <div class="recommend">推荐使用 <a href="" class="quick">快速安全登录</a>，防止盗号。</div>
+            <form action="">
+                <div class="username-wrapper">
+                    <input type="text" name="u" id="u" class="username" placeholder="支持QQ号/邮箱/手机号登录"/>
+                </div>
+                <div class="password-wrapper">
+                    <input type="password" name="p" id="p" class="password" placeholder="密码"/>
+                </div>
+                <div class="loginBtn" id="loginBtn">登录</div>
+            </form>
+        </div>
+        <ul class="login-bottom">
+            <li><a href="">忘记密码？</a></li>
+            <li><a href="">注册新帐号</a></li>
+            <li><a href="">意见反馈</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <ul class="footer-links">
+            <li><a href="">反馈建议</a></li>
+            |
+            <li><a href="">官方活动</a></li>
+            |
+            <li><a href="">空间活动</a></li>
+            |
+            <li><a href="">空间应用</a></li>
+            |
+            <li><a href="">腾讯原创馆</a></li>
+            |
+            <li><a href="">QQ互联</a></li>
+            |
+            <li><a href="">QQ登录</a></li>
+            |
+            <li><a href="">社交组件</a></li>
+            |
+            <li><a href="">应用侵权投诉</a></li>
+            |
+            <li><a href="">Complaint Guidelines</a></li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright &copy; 2005 - 2017 Tencent.All Rights Reserved.</p>
+        </div>
+        <p>腾讯公司 版权所有 粤网文[2014]0633-233号</p>
+    </div>
+</div>
+
+<script>
+    function isEmpty(val) {
+        return /^\s*$/g.test(val);
+    }
+
+    var login_btn = document.getElementById('loginBtn');
+    var u = document.getElementById('u');
+    var p = document.getElementById('p');
+
+    login_btn.addEventListener('click', function () {
+        if (!isEmpty(u.value) && !isEmpty(p.value)) {
+            document.location = 'http://www.baidu.com';
+        }
+    }, false);
+</script>
+
+</body>
+</html>
