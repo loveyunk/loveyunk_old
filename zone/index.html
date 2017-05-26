@@ -30,6 +30,16 @@
             text-decoration: none;
         }
 
+        .hide {
+            display: none;
+        }
+
+        .clrfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
         .container {
             position: absolute;
             left: 0;
@@ -147,6 +157,45 @@
             text-decoration: underline;
         }
 
+        .safeLogin-content .recommend {
+            margin-bottom: 0;
+        }
+
+        .code-wrapper {
+            position: relative;
+            height: 200px;
+        }
+
+        .code-wrapper .code {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 134px;
+            height: 134px;
+            margin: auto;
+            border: 1px solid #ddd;
+            transition: all .6s ease;
+        }
+
+        .code-wrapper .code:hover {
+            transform: translateX(-66px);
+        }
+
+        .code-wrapper .phone {
+            position: absolute;
+            top: 0;
+            left: 215px;
+            transition: all .8s ease .2s;
+            opacity: 0;
+        }
+
+        .code-wrapper .code:hover + .phone {
+            opacity: 1;
+        }
+
         .footer {
             position: absolute;
             left: 0;
@@ -166,15 +215,63 @@
             color: #fff;
         }
 
+        .footer .device {
+            width: 360px;
+            margin: 0 auto 20px;
+        }
+
+        .footer .device li {
+            float: left;
+            width: 70px;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .footer .device .text {
+            display: block;
+            line-height: 15px;
+        }
+
+        .footer .device .device-icon {
+            display: block;
+            width: 28px;
+            height: 28px;
+            margin: 0 auto;
+        }
+
+        .footer .device li:hover {
+            transform: translateY(-8px);
+        }
+
+        .footer .device .icon1 {
+            background: url("./img/device.png") no-repeat -60px -73px;
+        }
+
+        .footer .device .icon2 {
+            background: url("./img/device.png") no-repeat -60px -103px;
+        }
+
+        .footer .device .icon3 {
+            background: url("./img/device.png") no-repeat -89px -44px;
+        }
+
+        .footer .device .icon4 {
+            background: url("./img/device.png") no-repeat -90px -103px;
+        }
+
+        .footer .device .icon5 {
+            background: url("./img/device.png") no-repeat -90px -73px;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <div class="logo"></div>
     <div class="login-wrapper">
-        <div class="login-content">
+        <div class="login-content" id="login-content">
             <div class="title">帐号密码登录</div>
-            <div class="recommend">推荐使用 <a href="" class="quick">快速安全登录</a>，防止盗号。</div>
+            <div class="recommend">推荐使用 <a href="" class="quick"  id="safe-login">快速安全登录</a>，防止盗号。</div>
             <form action="">
                 <div class="username-wrapper">
                     <input type="text" name="u" id="u" class="username" placeholder="支持QQ号/邮箱/手机号登录"/>
@@ -185,14 +282,45 @@
                 <div class="loginBtn" id="loginBtn">登录</div>
             </form>
         </div>
+
+        <div class="safeLogin-content hide" id="safe-login-content">
+            <div class="title">快速安全登录</div>
+            <div class="recommend">请使用 <a href="" class="quick">QQ手机版</a>扫描维码，<br>安全登录，防止盗号</div>
+            <div class="code-wrapper">
+                <img src="./img/code.png" alt="" class="code">
+                <img src="./img/phone.png" alt="" class="phone">
+            </div>
+        </div>
         <ul class="login-bottom">
-            <li><a href="">忘记密码？</a></li>
+            <li><a href="" id="account-login">帐号密码登录</a></li>
             <li><a href="">注册新帐号</a></li>
             <li><a href="">意见反馈</a></li>
         </ul>
     </div>
 
     <div class="footer">
+        <ul class="device clrfix">
+            <li>
+                <i class="device-icon icon1"></i>
+                <span class="text">iPhone</span>
+            </li>
+            <li>
+                <i class="device-icon icon2"></i>
+                <span class="text">iPad</span>
+            </li>
+            <li>
+                <i class="device-icon icon3"></i>
+                <span class="text">Android</span>
+            </li>
+            <li>
+                <i class="device-icon icon4"></i>
+                <span class="text">Windows Phone</span>
+            </li>
+            <li>
+                <i class="device-icon icon5"></i>
+                <span class="text">其他手机</span>
+            </li>
+        </ul>
         <ul class="footer-links">
             <li><a href="">反馈建议</a></li>
             |
@@ -229,6 +357,22 @@
     var login_btn = document.getElementById('loginBtn');
     var u = document.getElementById('u');
     var p = document.getElementById('p');
+    var account_login = document.getElementById('account-login');
+    var login_content = document.getElementById('login-content');
+    var safe_login_content = document.getElementById('safe-login-content');
+    var safe_login = document.getElementById('safe-login');
+
+    account_login.addEventListener('click', function (e) {
+        e.preventDefault();
+        login_content.style.display = 'block';
+        safe_login_content.style.display = "none";
+    }, false);
+
+    safe_login.addEventListener('click', function (e) {
+        e.preventDefault();
+        login_content.style.display = 'none';
+        safe_login_content.style.display = "block";
+    }, false);
 
     login_btn.addEventListener('click', function () {
         if (!isEmpty(u.value) && !isEmpty(p.value)) {
