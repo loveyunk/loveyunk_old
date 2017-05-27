@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/animate.css">
+    <title>more</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background: url("./images/bg.jpg") no-repeat fixed center center;
+            background-size: cover;
+        }
+
+        body {
+            /*background: #ddd;*/
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        .container {
+            width: 900px;
+            margin: 30px auto;
+        }
+
+        .project-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project-items > a {
+            display: block;
+            flex: 0 1 210px;
+            width: 210px;
+            margin-bottom: 35px;
+            text-align: center;
+            background: #fff;
+            border-radius: 6px 6px 0 0;
+            box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+            transition: all .6s ease;
+        }
+
+        .project-items > a:nth-child(1):hover {
+            animation: rotateIn .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(2):hover {
+            animation: jello .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(3):hover {
+            animation: wobble .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(4):hover {
+            box-shadow: 10px 10px 15px #666;
+            animation: bounce .8s;
+        }
+
+        .project-items > a:nth-child(5):hover {
+            animation: rubberBand .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(6):hover {
+            animation: swing .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(7):hover {
+            animation: tada .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items > a:nth-child(8):hover {
+            animation: flip .8s;
+            box-shadow: 10px 10px 15px #666;
+        }
+
+        .project-items .shadow {
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .project-items > a img {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px 6px 0 0;
+            transition: all linear .3s;
+        }
+
+        .project-items > a:hover img {
+            transform: scale(1.2);
+        }
+
+        .project-item-title {
+            color: #5e5e5e;
+            display: inline-block;
+            font-size: 13px;
+            line-height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="project-items">
+        <a href="http://www.loveyunk.com/tmall" target="_blank">
+            <div class="shadow">
+                <img src="images/prj01.jpg" alt="">
+            </div>
+            <span class="project-item-title">仿天猫商城首页</span>
+        </a>
+        <a href="https://github.com/loveyunk/sell" target="_blank">
+            <div class="shadow">
+                <img src="images/prj02.jpg" alt="">
+            </div>
+            <span class="project-item-title">vue仿饿了么</span>
+        </a>
+        <a href="http://www.loveyunk.com/Underwater-SDN-sensor-network-three---dimensional-deployment-system/"
+           target="_blank">
+            <div class="shadow">
+                <img src="images/prj03.jpg" alt="">
+            </div>
+            <span class="project-item-title">水下SDN传感网节点立体部署系统</span>
+        </a>
+        <a href="https://github.com/loveyunk/jd" target="_blank">
+            <div class="shadow">
+                <img src="images/prj04.jpg" alt="">
+            </div>
+            <span class="project-item-title">仿京东首页、登录页、注册页</span>
+        </a>
+        <a href="https://github.com/loveyunk/jqlite" target="_blank">
+            <div class="shadow">
+                <img src="images/prj05.jpg" alt="">
+            </div>
+            <span class="project-item-title">jqlite</span>
+        </a>
+        <a href="http://www.loveyunk.com/puzzle/" target="_blank">
+            <div class="shadow">
+                <img src="images/prj06.jpg" alt="">
+            </div>
+            <span class="project-item-title">拼图小游戏</span>
+        </a>
+        <a href="http://www.loveyunk.com/puzzle/" target="_blank">
+            <div class="shadow">
+                <img src="images/prj06.jpg" alt="">
+            </div>
+            <span class="project-item-title">拼图小游戏</span>
+        </a>
+        <a href="http://www.loveyunk.com/puzzle/" target="_blank">
+            <div class="shadow">
+                <img src="images/prj06.jpg" alt="">
+            </div>
+            <span class="project-item-title">拼图小游戏</span>
+        </a>
+    </div>
+</div>
+</body>
+</html>
