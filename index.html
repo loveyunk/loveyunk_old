@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,6 @@
         }
 
         body {
-            /*background: #eee;*/
             font-family: Helvetica, Arial, sans-serif;
             font-size: 15px;
             color: #555;
@@ -47,143 +46,27 @@
             font-size: 18px;
         }
 
-        @media screen and (max-width: 600px) {
-            .resume {
-                width: 100%;
-            }
-
-            .base {
-                width: 100%;
-            }
-
-            .profile {
-                width: 100%;
-            }
-
-            .base > div:nth-child(n+2) {
-                padding: 0 25px;
-            }
-
-            .func {
-                width: 100%;
-            }
-
-            .work {
-                width: 100%;
-            }
-
-            .edu {
-                width: 100%;
-            }
-
-            .func > div {
-                margin: 10px 0;
-            }
-
-            .interests-items {
-                justify-content: space-around;
-                flex-wrap: wrap;
-                margin: 1em 0;
-            }
-
-            .skills-soft ul {
-                flex-wrap: wrap;
-            }
-
-            .skills-soft ul li {
-                width: 50%;
-            }
-
-            .project-items {
-                flex-wrap: wrap;
-            }
-
-            .project-items > a {
-                width: 100%;
-                margin-bottom: 20px;
-                height: 172px;
-            }
-
-            .project-items .shadow {
-                height: 124px;
-            }
-        }
-
-        @media screen and (min-width: 600px) {
-            .resume {
-                width: 870px;
-                margin: 20px auto;
-            }
-
-            .base {
-                width: 225px;
-                padding: 30px 15px 10030px 15px;
-                margin-bottom: -10000px;
-            }
-
-            .profile {
-                width: 225px;
-                margin-left: -15px;
-            }
-
-            .profile::after {
-                content: '';
-                width: 100%;
-                height: 35px;
-                background: #e8e8e8;
-                position: absolute;
-                transform: skewY(-7deg);
-            }
-
-            .func {
-                width: 645px;
-            }
-
-            .func:hover > div:not(:hover) {
-                opacity: .5;
-            }
-
-            .func > div {
-                margin: 10px 0;
-            }
-
-            .interests-items {
-                justify-content: space-between;
-                margin: 20px 0;
-            }
-
-            .work {
-                width: 44%;
-            }
-
-            .edu {
-                width: 56%;
-            }
-
-            .project-items {
-                flex-wrap: wrap;
-            }
-
-            .project-items > a {
-                width: 190px;
-                height: 145px;
-                margin-bottom: 20px;
-            }
-
-            .project-items .shadow {
-                height: 95px;
-            }
-
+        .ftm {
+            font-family: "Microsoft Yahei", sans-serif;
         }
 
         /******** resume ********/
         .resume {
+            width: 870px;
+            margin: 20px auto;
             background: #fbfbfb;
             border: 1px solid #ddd;
             box-shadow: 0 0 20px -3px #bbb;
             position: relative;
             overflow: hidden;
             z-index: 10;
+        }
+
+        @media screen and (max-width: 600px) {
+            .resume {
+                width: 100%;
+                margin: 0;
+            }
         }
 
         .resume::after {
@@ -202,6 +85,9 @@
         }
 
         .base {
+            width: 225px;
+            padding: 30px 15px 10030px 15px;
+            margin-bottom: -10000px;
             background: rgba(238, 238, 238, 0.6);
         }
 
@@ -209,14 +95,50 @@
             margin: 22px 0;
         }
 
+        @media screen and (max-width: 600px) {
+
+            .base > div:nth-child(n+2) {
+                padding: 0 25px;
+            }
+
+            .base {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
         /******** profile ********/
         .profile {
+            width: 225px;
+            margin-left: -15px;
             height: 370px;
             position: relative;
             z-index: 1;
             margin-top: -30px;
             margin-bottom: 50px;
             background: #e8e8e8;
+        }
+
+        .profile::after {
+            content: '';
+            width: 100%;
+            height: 35px;
+            background: #e8e8e8;
+            position: absolute;
+            transform: skewY(-7deg);
+        }
+
+        @media screen and (max-width: 600px) {
+            .profile {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .profile::after {
+                content: '';
+                display: none;
+            }
         }
 
         .profile .banner {
@@ -235,7 +157,6 @@
             height: 150px;
             border-radius: 50%;
             transform: scale(.7);
-            /*box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.3);*/
             border: 2px solid #fff;
             margin: 0 auto;
             background: url("images/t.jpg");
@@ -335,7 +256,25 @@
 
         /******** func ********/
         .func {
+            width: 645px;
             padding: 30px 25px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .func {
+                width: 100%;
+            }
+        }
+
+        .func > div {
+            margin: 10px 0;
+        }
+
+        @media screen and (min-width: 600px) {
+
+            .func:hover > div:not(:hover) {
+                opacity: .5;
+            }
         }
 
         .func:hover > div {
@@ -367,6 +306,25 @@
             vertical-align: middle;
             margin-right: 8px;
             transition-duration: .3s;
+        }
+
+        .work {
+            width: 44%;
+        }
+
+        .edu {
+            width: 56%;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .work {
+                width: 100%;
+            }
+
+            .edu {
+                width: 100%;
+            }
         }
 
         .work, .edu {
@@ -496,12 +454,21 @@
         .skills-soft ul {
             display: flex;
             justify-content: space-between;
-            /*flex-wrap: wrap;*/
         }
 
         .skills-soft ul li {
             position: relative;
-            /*width: 25%;*/
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .skills-soft ul {
+                flex-wrap: wrap;
+            }
+
+            .skills-soft ul li {
+                width: 50%;
+            }
         }
 
         .skills-soft ul li:hover svg .cbar {
@@ -545,12 +512,23 @@
 
         /******** interests ********/
         .interests-items {
+            justify-content: space-between;
+            margin: 20px 0;
             box-sizing: border-box;
             padding: 15px;
             width: 100%;
             border: 1px solid #cdcdcd;
             text-align: center;
             display: flex;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .interests-items {
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin: 1em 0;
+            }
         }
 
         .interests-items div i {
@@ -563,7 +541,6 @@
         }
 
         .interests-items div {
-            /*display: inline-block;*/
             width: 80px;
             height: 80px;
             cursor: pointer;
@@ -581,14 +558,16 @@
         /******** project ********/
         .project-items {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 22px;
         }
 
         .project-items > a {
             display: block;
-            /*width: 190px;*/
-            /*height: 145px;*/
+            width: 190px;
+            height: 145px;
+            margin-bottom: 20px;
             text-align: center;
             background: #fff;
             border-radius: 6px 6px 0 0;
@@ -597,9 +576,25 @@
 
         .project-items .shadow {
             width: 100%;
-            /*height: 95px;*/
+            height: 95px;
             overflow: hidden;
             border-radius: 6px 6px 0 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            .project-items {
+                flex-wrap: wrap;
+            }
+
+            .project-items > a {
+                width: 100%;
+                margin-bottom: 20px;
+                height: 172px;
+            }
+
+            .project-items .shadow {
+                height: 124px;
+            }
         }
 
         .project-items > a img {
@@ -622,6 +617,7 @@
     </style>
 </head>
 <body>
+
 <div class="resume">
     <div class="base">
         <div class="profile">
@@ -634,19 +630,23 @@
         </div>
         <div class="about">
             <h3>About me</h3>
-            <p>你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，喜歡編程，希望能得到一份工作機會，請多指教。</p>
+            <p class="ftm">你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，喜歡編程，希望能得到一份工作機會，請多指教。</p>
+            <p></p>
         </div>
-        <div class="contact">
+        <div class="contact ftm">
             <h3>Keep In Touch</h3>
             <div class="call"><i class="fa fa-phone"></i><span>(+86)152 3736 2691</span></div>
             <div class="address"><i class="fa fa-map-marker"></i><span>Henan, China</span></div>
             <div class="email"><i class="fa fa-envelope" style="font-size: 16px"></i><span>mjjccc@126.com</span></div>
             <div class="email"><i class="fa fa-qq" style="font-size: 15px"></i><span>139 846 3573</span></div>
             <div class="email"><i class="fa fa-weixin" style="font-size: 15px"></i><span>mj152370</span></div>
-            <!--<div class="email"><i class="fa fa-github" style="font-size: 18px"></i><span>https://github.com/loveyunk</span></div>-->
             <!--<div class="website"><a href="http://www.cnblogs.com/loveyunk/" target="_blank"><i class="fa fa-book" style="font-size: 18px;"></i><span>bolg</span></a></div>-->
+            <!--<div class="website"><a href="http://github.com/loveyunk"><i-->
+            <!--class="fa fa-github"></i><span>github.com/loveyunk</span></a></div>-->
             <div class="website"><a href="http://www.loveyunk.com"><i
                     class="fa fa-home"></i><span>www.loveyunk.com</span></a></div>
+            <div class="website"><a href="#"><i
+                    class="fa fa-download"></i><span>download resume</span></a></div>
         </div>
         <div class="follow">
             <h3>Follow</h3>
@@ -692,20 +692,20 @@
                 <!--</li>-->
             </ul>
         </div>
-        <div class="skills-prog">
+        <div class="skills-prog ftm">
             <h3><i class="fa fa-code"></i>Skills</h3>
             <ul>
-                <li data-percent="75"><span>HTML / HTML5</span>
+                <li data-percent="75"><span>JavaScript</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="71"><span>CSS3 / SCSS</span>
+                <li data-percent="71"><span>CSS3 & SCSS</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="70"><span>JavaScript</span>
+                <li data-percent="70"><span>HTML</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
