@@ -112,7 +112,7 @@
         .profile {
             width: 225px;
             margin-left: -15px;
-            height: 370px;
+            height: 426px;
             position: relative;
             z-index: 1;
             margin-top: -30px;
@@ -173,6 +173,12 @@
             position: relative;
             z-index: 4;
             margin-top: 80px;
+        }
+
+        .profile .info > p {
+            font-size: 14px;
+            font-style: italic;
+            color: #000;
         }
 
         .profile .info .name img {
@@ -309,11 +315,11 @@
         }
 
         .work {
-            width: 44%;
+            width: 55%;
         }
 
         .edu {
-            width: 56%;
+            /*width: 48%;*/
         }
 
         @media screen and (max-width: 600px) {
@@ -624,14 +630,16 @@
             <div class="photo"></div>
             <div class="banner"></div>
             <div class="info">
-                <h4 class="name"><img src="images/loveyunk.png" alt=""></h4><span
-                    class="job">Front-end Web Designer</span>
+                <p>一腔热血的激情</p>
+                <p>一夜失眠的创意</p>
+                <p>一个像素的执着</p>
+                <h4 class="name"><img src="images/loveyunk.png" alt=""></h4>
+                <span class="job">Front-end Web Designer</span>
             </div>
         </div>
         <div class="about">
             <h3>About me</h3>
-            <p class="ftm">你好，目前大三學生，正在努力學習中，就讀於河南科技學院，熱愛前端，喜歡編程，希望能得到一份工作機會，請多指教。</p>
-            <p></p>
+            <p class="ftm">你好，目前大三学生，正在努力学习中，就读于河南科技学院，热爱前端，喜欢编程，希望能得到一份工作机会，请多指教。</p>
         </div>
         <div class="contact ftm">
             <h3>Keep In Touch</h3>
@@ -640,7 +648,9 @@
             <div class="email"><i class="fa fa-envelope" style="font-size: 16px"></i><span>mjjccc@126.com</span></div>
             <div class="email"><i class="fa fa-qq" style="font-size: 15px"></i><span>139 846 3573</span></div>
             <div class="email"><i class="fa fa-weixin" style="font-size: 15px"></i><span>mj152370</span></div>
-            <div class="website"><a href="http://www.cnblogs.com/loveyunk/" target="_blank"><i class="fa fa-book" style="font-size: 18px;"></i><span>cnblogs/loveyunk</span></a></div>
+            <div class="website"><a href="http://www.cnblogs.com/loveyunk/" target="_blank"><i class="fa fa-book"
+                                                                                               style="font-size: 18px;"></i><span>cnblogs/loveyunk</span></a>
+            </div>
             <!--<div class="website"><a href="http://github.com/loveyunk"><i-->
             <!--class="fa fa-github"></i><span>github.com/loveyunk</span></a></div>-->
             <div class="website"><a href="http://www.loveyunk.com"><i
@@ -655,7 +665,8 @@
                 <a href="https://jsfiddle.net/user/loveyunk/fiddles/" target="_blank"><i class="fa fa-jsfiddle"></i></a>
                 <a href="http://codepen.io/loveyunk/" target="_blank"><i class="fa fa-codepen"></i></a>
                 <a href="javascript:" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="http://www.linkedin.com/in/%E4%BA%9A%E4%BC%9F-%E9%83%91-778b7a111/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="http://www.linkedin.com/in/%E4%BA%9A%E4%BC%9F-%E9%83%91-778b7a111/" target="_blank"><i
+                        class="fa fa-linkedin"></i></a>
                 <a href="http://weibo.com/loveyunk " target="_blank"><i class="fa fa-weibo"></i></a>
                 <!--<a href="javascript:" target="_blank"><i class="fa fa-weixin"></i></a>-->
             </div>
@@ -666,7 +677,7 @@
             <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
             <ul>
                 <li>
-                    <span>暫無</span>
+                    <span>暂无</span>
                     <small></small>
                     <small></small>
                 </li>
@@ -681,9 +692,9 @@
             <h3><i class="fa fa-graduation-cap"></i>Education</h3>
             <ul>
                 <li>
-                    <span>河南科技學院</span>
-                    <small>計算機科學與技術</small>
-                    <small>Sep 2014 - now</small>
+                    <span>河南科技学院</span>
+                    <small>计算机科学与技术</small>
+                    <small>Sep 2014 - 2018</small>
                 </li>
                 <!--<li>-->
                 <!--<span>河南科技學院</span>-->
@@ -695,12 +706,12 @@
         <div class="skills-prog ftm">
             <h3><i class="fa fa-code"></i>Skills</h3>
             <ul>
-                <li data-percent="75"><span>JavaScript</span>
+                <li data-percent="68"><span>JavaScript</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="71"><span>CSS3 & SCSS</span>
+                <li data-percent="73"><span>CSS3 & SCSS</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
@@ -730,17 +741,27 @@
                 <!--<div class="bar"></div>-->
                 <!--</div>-->
                 <!--</li>-->
-                <li data-percent="82"><span>Photoshop</span>
+                <li data-percent="72"><span>Photoshop</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="60"><span>SVG</span>
+                <li data-percent="56"><span>SVG</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="65"><span>微信小程序</span>
+                <li data-percent="60"><span>微信小程序</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="36"><span>webpack</span>
+                    <div class="skills-bar">
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li data-percent="41"><span>gulp</span>
                     <div class="skills-bar">
                         <div class="bar"></div>
                     </div>
@@ -766,7 +787,7 @@
                     <span>Sublime Text</span>
                     <small></small>
                 </li>
-                <li data-percent="89">
+                <li data-percent="69">
                     <svg viewbox="0 0 100 100">
                         <circle cx="50" cy="50" r="45"/>
                         <circle cx="50" cy="50" r="45" class="cbar"/>
